@@ -12,6 +12,7 @@
             <legend>Customer Experience Survey</legend>
             <label for="storeNumber">Store Number</label>
             <select name="storeNumber" id="storeNumber">
+                <option value="selectStore" hidden>Select A Store</option>
                 <option value="num3109">3109</option>
                 <option value="num2421">2421</option>
                 <option value="num5357">5357</option>
@@ -21,7 +22,7 @@
             <fieldset>
                 <legend>When you visited:</legend>
                 <label for="dateVisited">Date Visited</label>
-                <input type="date" id="dateVisited">
+                <input type="date" id="dateVisited" min="2022-01-01" max="2022-12-31">
                 <br />
                 <label for="timeVisited">Time</label>
                 <input type="time" id="timeVisited">
@@ -40,7 +41,7 @@
                 <input type="radio" id="satisfied" name="satisfaction" value="satisfied">
                 <label for="satisfied">Satisfied</label>
                 <br />
-                <input type="radio" id="neither" name="satisfaction" value="neither">
+                <input type="radio" id="neither" name="satisfaction" value="neither" checked>
                 <label for="neither">Neither Satisfied nor Dissatisfied</label>
                 <br />
                 <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied">
@@ -56,13 +57,18 @@
 
             <label for="timesVisited">Times visited in the last month:</label>
             <br />
-            <input type="text" id="timesVisited">
+            <input type="number" id="timesVisited" min="1" max="30">
             <br />
 
             <input type="checkbox" id="contact">
             <label for="contact">Please check the box if you are willing to be contacted about your experience</label>
             <br />
 
+            <label for="passwrd">Password</label>
+            <input type="password" name="passwrd" id="passwrd" pattern="[a-zA-Z0-9]{5,10}" title="Please enter a password that is 5 to 10 characters in length">
+            <br />
+
+            <button>Reset</button>
             <input type="submit">
 
         </fieldset>
